@@ -1,0 +1,22 @@
+{
+  "name": "proj1_scryfall_api_site",
+  "version": "1.0.0",
+  "description": "Makes a static site to use scryfall api results to make and save decks locally, then play mock games on the page. Stretch Goal, make a second window that cards can be dragged to and from to allow cards to be hidden from video call programs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest /test --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amarantino159/ScryFall-API-MTG-Engine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amarantino159/ScryFall-API-MTG-Engine/issues"
+  },
+  "homepage": "https://github.com/amarantino159/ScryFall-API-MTG-Engine#readme",
+  "devDependencies": {
+    "jest": "^30.0.4"
+  }
+}
