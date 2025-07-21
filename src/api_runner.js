@@ -1,44 +1,26 @@
+
+const api_start = 'https://api.scryfall.com/cards/search?';
+
 class Scryfall_API_Fetcher{
 
+
   constructor(data){
-    this.api_start = 'https://api.scryfall.com/cards/search?';
 
     this.data=data;
-    // this.data2;
-    // this.data = Scryfall_API_Fetcher.search_a_Card('defenestrate');
-    // console.log(this.data);
-    // this.search_a_Card(search);
+
   };
 
-  static async create(search){
-    data = await fetch(`https://api.scryfall.com/cards/search?q=${search}`);
-    data = await data.json();
+  static async search_a_Card(search){
+    data = await fetch(`${api_start}q=${search}`)
+    .then((response)=>response.json());
+
     return new Scryfall_API_Fetcher(data);
   }
 
 
-
-  static async search_a_Card(fetcher,search){
-    try{
-      var ans = await fetch(`https://api.scryfall.com/cards/search?q=${search}`);
-      data = await ans.json();
-      fetcher.data = await data;
-    }
-    catch(error){
-      console.log(error);
-    };
-    //fetcher.data = data;
+  loadCheck(){
+    return (this.data!==undefined);
   };
-
-  // static async loadcheck(){
-  //   try{
-  //     this.data != undefined
-  //   }
-  //   catch(error){
-  //     console.log(error);
-  //   };
-  //   return data;
-  // };
 
 
   // async get_first_card(search){

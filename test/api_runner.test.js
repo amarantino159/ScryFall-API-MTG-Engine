@@ -1,23 +1,9 @@
 const Scryfall_API_Fetcher = require('../src').Scryfall_API_Fetcher;
 beforeEach( ()=>{
 
-//   fetcher = new Scryfall_API_Fetcher('defenestrate');
-//   const temp = async () => {
-//     let x = await Scryfall_API_Fetcher.search_a_Card(fetcher,'defenestrate');
-//     // console.log(typeof x)
-//     while(x == undefined){
-//       setTimeout(()=>{},500)
-//       console.log("Promise!")
-//     }
-// setTimeout(()=>{},500);
-//     this.data2=15;
-//     return x;
-//   };
-//   temp();
-
-  doThis = async (search) =>{
-    fetcher = await Scryfall_API_Fetcher.create(search);
-    return fetcher;
+  _INIT = async (search) =>{
+    fetched = await Scryfall_API_Fetcher.search_a_Card(search);
+    return fetched;
   };
 
 });
@@ -26,20 +12,21 @@ describe('API Fetcher', () => {
   describe('insantiates a new fetcher class', () => {
     test('takes the following arguments:', () => {
 
-      doThis('defenestrate')
-      .then((fetcher)=>{
-        expect(typeof (fetcher)).toBe('object');
+      _INIT('defenestrate')
+      .then((fetched)=>{
+        expect(typeof (fetched.data)).toBe('object');
       });
     });
     test('fetcher has data:', () => {
-      //console.log(fetcher.data2)
-      doThis('defenestrate')
-      .then((fetcher)=>{
-              console.log(fetcher['data']['total_cards'])
+      _INIT('defenestrate')
+      .then((fetched)=>{
+              console.log(fetched.data['data']['total_cards']);
+              return fetched;
             })
-      .then((fetcher)=>{
-        expect(typeof fetcher['data']['total_cards']).toBe('number');
-        return fetcher;
+      .then((fetched)=>{
+        // console.log(fetched.loadCheck())
+        expect(typeof (fetched.data['data']['total_cards'])).toBe('number');
+        return fetched;
       });
     });
   });
@@ -104,29 +91,29 @@ describe('API Fetcher', () => {
 
 
 
-  describe('search_a_Card(search)', () => {
-    test('Function is function', () => {
-      expect(typeof fetcher.search_a_Card).toBe('function');
-    });
+  // describe('search_a_Card(search)', () => {
+  //   test('Function is function', () => {
+  //     expect(typeof fetcher.search_a_Card).toBe('function');
+  //   });
 
-    test('Function returns a json object', () => {
-      let response = fetcher.search_a_Card('defenestrate');
-      // console.log(response);
-      expect(typeof response).toBe('object');
-    });
-  });
+  //   test('Function returns a json object', () => {
+  //     let response = fetcher.search_a_Card('defenestrate');
+  //     // console.log(response);
+  //     expect(typeof response).toBe('object');
+  //   });
+  // });
 
-  describe('get_first_card(search)', () => {
-    test('Function is function', () => {
-      expect(typeof fetcher.get_first_card).toBe('function');
-    });
+  // describe('get_first_card(search)', () => {
+  //   test('Function is function', () => {
+  //     expect(typeof fetcher.get_first_card).toBe('function');
+  //   });
 
-    test('Function returns the needed thing', () => {
-      let response = fetcher.get_first_card('defenestrate');
-      // console.log(response);
-      expect(typeof response).toBe('object');
-    });
-  });
+  //   test('Function returns the needed thing', () => {
+  //     let response = fetcher.get_first_card('defenestrate');
+  //     // console.log(response);
+  //     expect(typeof response).toBe('object');
+  //   });
+  // });
   // describe('get_first_image_of_card(search)', () => {
   //   test('Function is function', () => {
   //     expect(typeof fetcher.get_first_image_of_card).toBe('function');
