@@ -1,0 +1,54 @@
+html{
+  background-color: black;
+  color: #4257FF;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#loaded{
+  color: green;
+}
+#red{
+  color: red;
+}
+#magenta{
+  color: #860225;
+}
+
+#newCard{
+  background-color: #74005B;
+  border-color: #FF00E4;
+  color: #4257FF;
+}
+
+#submit{
+  background-color: #33288D;
+  border-color: #4257FF;
+  color: #FF00E4;
+}
+
+
+#order-select{
+  background-color: #74005B;
+  border-color: #FF00E4;
+  color: #4257FF;
+}
+#Dir-select{
+  background-color: #33288D;
+  border-color: #4257FF;
+  color: #FF00E4;
+}
+#unique-select{
+  background-color: #74005B;
+  border-color: #FF00E4;
+  color: #4257FF;
+}
+
+#pic{
+  justify-content: space-between;
+}
+
+#card{
+  width: 12%;
+  height:18%;
+}

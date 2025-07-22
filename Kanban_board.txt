@@ -1,0 +1,38 @@
+BackLog
+
+
+
+
+
+
+Needs discussion
+
+In Progress (forall P in InProgress, P.dev ==Tony )
+
+
+
+Review
+
+
+Completed
+  JS API connection
+  JS API grab card images
+  JS API grab
+  HTML make filter options
+  JS make filter options avalible
+  HTML show images
+
+Icebox
+  JS API test suite
+  JS card class tests
+  JS card deck tests
+  HTML drag images
+  HTML flip cards to back side
+  JS make a card class
+  JS make a deck class
+  JS API grab card info
+  HTML show card text
+  JS save to local JSON file
+  JS JSON file i/o tests
+  HTML make a new window
+  HTML drag images from one window to another
