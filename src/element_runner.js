@@ -1,4 +1,4 @@
-import Scryfall_API_Fetcher from './api_runner.js';
+import Scryfall_API_Fetcher from './api_runner.js';// not used
 
 class Elements {
   constructor(){
@@ -31,20 +31,18 @@ class Elements {
     while(oldcards.length>0){
       oldcards[0].remove();
     }
-    for(let i=0;i<array.length&&i<16;i++){
+    for(let i=0;i<array.length&&i<16;i++){ // adds a max of 16 cards from the API call
       let url = array[i]['image_uris']['normal'];
       let card=document.createElement("img");
       card.id = 'card';
       card.src = `${url}`;
       card.alt = array[i]['name'];
-      // card.height= '100px';
-      // card.width= '100px';
       this.pic.appendChild(card);
     }
   }
-  changeColor() {
+  changeColor() { // does the animation for loading screen (for now just a text change)
       // check if an interval has already been set up
-      this.intervalID ??= setInterval(()=>{
+      this.intervalID ??= setInterval(()=>{ // was not able to make it a non-anaonmys function due to a bug with .this
         if(this.loaded.id !== "red")
         {
           this.loaded.id = "red";
@@ -56,7 +54,7 @@ class Elements {
         }
       }, 300);
     }
-  stopTextColor() {
+  stopTextColor() { // stops the load animation
     this.loaded.id =  "loaded";
     this.loaded.innerHTML = "LOADED";
     clearInterval(this.intervalID);
@@ -64,7 +62,7 @@ class Elements {
     this.intervalID = null;
   }
 
-  makePic(card_name,order='name',dir='auto',unique='cards'){
+  makePic(card_name,order='name',dir='auto',unique='cards'){ // does the api fetch
     this.changeColor()
     let data = fetch(`https://api.scryfall.com/cards/search?q=${card_name}&order=${order}&dir=${dir}&unique=${unique}`)
     .then((response)=>response.json())
@@ -72,10 +70,10 @@ class Elements {
       return jsoned['data']
     })
     .then((array)=>this.html_ify(array))
-    .then(setTimeout(()=>{this.stopTextColor()},3000))
+    .then(setTimeout(()=>{this.stopTextColor()},3000)) // on purpose delay to show load animation
   };
 
-  dataLoaded(){
+  dataLoaded(){ // not used yet.
     let intervalID;
     let lim = 10;
     intervalID??= setInterval(() => {
