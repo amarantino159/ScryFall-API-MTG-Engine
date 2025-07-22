@@ -1,2 +1,7 @@
 # ScryFall-API-MTG-Engine
-Makes a static site to use scryfall api results to make and save decks locally, then play mock games on the page. Stretch Goal, make a second window that cards can be dragged to and from to allow cards to be hidden from video call programs.
+
+To download the page simply fork and clone the git repo into a local directory.
+
+Then run index.html in your browser.
+
+To use the page:= The page has a text box to input your Scryfall search querry, and various labeled dropdown menus for how to order the cards, once all of those are set hit the seach button and the page will populate with 12 cards that meet your search criteria and ordering.

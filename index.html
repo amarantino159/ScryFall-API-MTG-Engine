@@ -3,9 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>MTG Scryfall viewer</title>
 </head>
 <body>
 
+  <h1>Magic The Gathering Card Finder using ScryFall</h1>
+
+  <input type="text" id="newCard" size="25"/>
+  <button id="submit">search card</button>
+  <div class="loading" id="loaded">    </div>
+
+  <label for="order-select">Choose an ordering:</label>
+  <select name="order_select" id="order-select">
+    <option value="name">Name</option>
+    <option value="set">Set</option>
+    <option value="released">Release Date</option>
+    <option value="rarity">Rarity</option>
+    <option value="color">Color Identity</option>
+    <option value="usd">US Dollar</option>
+    <option value="tix">MTGO Tix</option>
+    <option value="eur">Euros</option>
+    <option value="cmc">Mana Value</option>
+    <option value="power">Power</option>
+    <option value="toughness">Toughness</option>
+    <option value="edhrec">EDHREC Ranking</option>
+    <option value="penny">Penny Dreadful Ranking</option>
+    <option value="artist">Artist Name</option>
+    <option value="review">Youtube Reviewer order</option>
+  </select>
+
+  <label for="Dir-select">Choose Ascending or Decending:</label>
+  <select name="Dir-select" id="Dir-select">
+    <option value="auto">Auto</option>
+    <option value="asc">Asc</option>
+    <option value="desc">Desc</option>
+  </select>
+
+  <label for="unique-select">Choose Unique Cards or Unique Art:</label>
+  <select name="unique-select" id="unique-select">
+    <option value="cards">Cards</option>
+    <option value="art">Art</option>
+  </select>
+
+  <div id="pic">
+
+  </div>
+
+
 </body>
+
+
+<!-- <link rel="stylesheet" href="./index.css"> -->
+<script src="./src/index.js"type="module"></script>
 </html>

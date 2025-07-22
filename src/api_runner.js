@@ -40,5 +40,5 @@ class Scryfall_API_Fetcher{
 
 }
 
-
-module.exports = Scryfall_API_Fetcher;
+export default Scryfall_API_Fetcher;
+// module.exports = Scryfall_API_Fetcher;
